@@ -1,45 +1,56 @@
 ---
-title: "Your A4 Report Title (TODO: Revise title)"
-author: "Your Name"
+title: "Jail Population Growth and Equality Implications"
+author: "Ryan Breuer"
 date: '2022-11-01'
 output: html_document
 ---
 
 ```{r echo=FALSE, eval=TRUE, message=FALSE}
-source("../source/a4-helpers.R")
-source("../source/analysis.R")
+source("c:/Users/ryanbreuer/documents/info201/assignments/a4-rbreuer1/source/analysis.r)
 ```
 
-## Abstract 
-[TODO: Include a short abstract (about 50 words)]
+## Section 1: Introduction <br>
 
-# Test (TODO: Remove before submission!!)
+This report addresses social issues of racial inequality, biases, and discrepancies across the countries related to jailed populations. There are power structures that exist and in order to combat them, we have to use the data and resources we have access to in order to reveal unjust systems. The direct stakeholders of this data set are those in the populations included in this data set. The indirect stakeholders impacted by this data set include the communities in which the jailed populations are located and their families. The questions that I answer in my report include how people of different races are represented in the jailed populations of our country. 
+
+## Section 2: Data Summary 
+
+I decided to calculate data regarding information surrounding the black juvenile jail population in my home county during my birth year. I saw that there was a ~20% drop in this population in the fist year, a ~15% rise in the second year, and a ~20% rise in the third year after my birth. I found this information very intriguing and decided to dive deeper into it. I discovered that there are patterns of inequality in Maricopa County and am interested to explore this data further. My hypothesis is that the black population was impacted by policies in which targeted juveniles.
+
+# Section 3: Jail Population Rise in the United States
+
+The chart below shows the exponential increase in the jail population in the United States over the past 30 years. This data is very revealing in how more and more people are being jailed every year. This may have implications on how policies are enacted and how populations are committing more crime. 
+
+
 ```{r echo=FALSE}
-q1_string <- test_query1()
-num <- 5
-```
-As you know, this is a markdown report. The [R Markdown Cheatsheet](https://www.rstudio.com/wp-content/uploads/2015/02/rmarkdown-cheatsheet.pdf) is **useful!**
-
-* Here's a test of a dynamic variable. Say **"`r q1_string`!!!** 
-* Here's another test. A vector
-of numbers: `r test_query2(num)`.
-
-Recall that _{r echo=TRUE}_ can be used to display the code, 
-which is very useful when developing and debugging a report. Here's an example: 
-
-```{r echo=TRUE}
-num <- 5
-sum <- sum(test_query2(num))
-print(sum)
+plot(plot_jail_pop_for_us)
 ```
 
-## Introduction 
-[TODO]
+# Section 4: Jail Population Rise by States
 
-## Data Summary 
-[TODO]
+This chart below showcases the varying rise in jail populations across the country. It is interesting that there are large discrepancies in how the population has experienced growth in different states. This graph is foccussed on the past 30 years.
 
-[TODO ... other sections ... See Canvas for details]
 
-_All the very best with your work!_
+```{r echo=FALSE}
+plot(plot_jail_pop_by_states)
+```
+
+# Section 5: Black vs. White Jail Population in Washington (over time)
+
+This chart below shows the difference in black and white populations of people in Washington jails. It shows that there are serious differences in these values. The main takeaway is that there are more black people in jail than white people. 
+
+
+```{r echo=FALSE}
+plot(balck_vs_black_jail_pop_per_state)
+```
+
+# Section 6: Map Showcasing Percantage of Each State's Black Jail Population
+
+This map displays how there are varying percentages of state's black population in jails. As you can see, there is a higher proportion in the south east vs the northwest. My hypothesis is that this is due to racial bias from historical slavery in these areas.  
+
+
+```{r echo=FALSE}
+plot(map)
+```
+
 

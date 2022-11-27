@@ -5,13 +5,15 @@ date: '2022-11-01'
 output: html_document
 ---
 
+
 ```{r echo=FALSE, eval=TRUE, message=FALSE}
-source("c:/Users/ryanbreuer/documents/info201/assignments/a4-rbreuer1/source/analysis.r)
+source("../source/analysis.r")
+source("../source/a4-helpers.R")
 ```
 
-## Section 1: Introduction <br>
+## Section 1: Introduction
 
-This report addresses social issues of racial inequality, biases, and discrepancies across the countries related to jailed populations. There are power structures that exist and in order to combat them, we have to use the data and resources we have access to in order to reveal unjust systems. The direct stakeholders of this data set are those in the populations included in this data set. The indirect stakeholders impacted by this data set include the communities in which the jailed populations are located and their families. The questions that I answer in my report include how people of different races are represented in the jailed populations of our country. 
+This report addresses social issues of racial inequality, biases, and discrepancies across the countries related to jailed populations. There are power structures that exist and in order to combat them, we have to use the data and resources we have access to in order to reveal unjust systems. The direct stakeholders of this data set are those in the populations included in this data set. The indirect stakeholders impacted by this data set include the communities in which the jailed populations are located and their families. The questions that I answer in my report include how people of different races are represented in the jailed populations of our country.
 
 ## Section 2: Data Summary 
 

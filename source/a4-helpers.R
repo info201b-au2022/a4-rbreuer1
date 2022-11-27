@@ -11,6 +11,8 @@ get_data <- function(num_records=-1) {
   return(df)
 }
 
+view(get_data)
+
 # Processing places ----
 # NOTE: For these functions to work, the dataframe `incarceration_df` must 
 #       be initialized

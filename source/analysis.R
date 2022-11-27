@@ -25,6 +25,7 @@ test_query2 <- function(num=6) {
   return(v)
 }
 
+
 ## Section 2  ---- 
 #----------------------------------------------------------------------------#
 # Your functions and variables might go here ... <todo: update comment>
@@ -33,21 +34,21 @@ test_query2 <- function(num=6) {
 
 View(incarceration_trends)
 
-lowest_pop_county <- total_jail_pop %>% 
-  filter(total_jail_pop == max(total_jail_pop)) %>% 
-  pull(county_names)
+#lowest_pop_county <- total_jail_pop %>% 
+ # filter(total_jail_pop == max(total_jail_pop)) %>% 
+  #pull(county_names)
 
 #County with highest jail population
 
-highest_pop_county <- total_jail_pop %>% 
-  filter(total_jail_pop == max(total_jail_pop)) %>% 
-  pull(county_names)
+#highest_pop_county <- total_jail_pop %>% 
+  #filter(total_jail_pop == max(total_jail_pop)) %>% 
+  #pull(county_names)
 
 #County with highest juvenile population
 
-highest_juvinile_pop_county <- total_jail_pop %>% 
-  filter(total_jail_pop == max(male_juvenile_population)) %>% 
-  pull(county_names)
+#highest_juvinile_pop_county <- total_jail_pop %>% 
+  #filter(total_jail_pop == max(male_juvenile_population)) %>% 
+  #pull(county_names)
 
 #----------------------------------------------------------------------------#
 
@@ -73,8 +74,7 @@ plot_jail_pop_for_us <- ggplot(data = get_year_jail_pop) +
          theme(plot.caption = element_text(hjust = 0.5))
 
   # TODO: Implement this function 
-  plot(plot_jail_pop_for_us)
-} 
+
 
 ## Section 4  ---- 
 #----------------------------------------------------------------------------#

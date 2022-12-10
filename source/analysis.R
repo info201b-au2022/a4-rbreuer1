@@ -10,6 +10,21 @@ view(incarceration_trends)
 # The functions might be useful for A4
 source("../source/a4-helpers.R")
 
+
+get_data <- function(num_records=-1) {
+  fname <- "~/Documents/info201/data/incarceration_trends.csv"
+  # fname <- "C:/Users/ryanbreuer/Documents/info201/data/incarceration_trends.csv"
+  df <- read.csv(fname, nrows=num_records)
+  return(df)
+}
+
+get_data <- function(num_records=-1) {
+  fname <- "~/Documents/info201/data/incarceration_trends.csv"
+  # fname <- "C:/Users/ryanbreuer/Documents/info201/data/incarceration_trends.csv"
+  df <- read.csv(fname, nrows=num_records)
+  return(df)
+}
+
 ## Test queries ----
 #----------------------------------------------------------------------------#
 # Simple queries for basic testing
@@ -60,6 +75,7 @@ View(incarceration_trends)
 get_year_jail_pop <- incarceration_trends %>%
   group_by(year) %>% 
   summarize(total_jail_pop = sum(total_jail_pop, na.rm = TRUE))
+#this will tell me more about the jail population for a specific year.
 
 View(get_year_jail_pop)
 
@@ -84,6 +100,7 @@ get_jail_pop_by_states <- incarceration_trends %>%
   group_by(state,year) %>% 
   summarize(total_jail_pop_state = sum(total_jail_pop, na.rm=TRUE)) %>% 
   return(year,state, total_jail_pop_state)
+#this will tell me jail population for by state. 
 
 View(get_jail_pop_by_states)
 
@@ -109,7 +126,7 @@ plot(plot_jail_pop_by_states)
 relevant_variables <- incarceration_trends %>% 
   select(state, year, region, total_pop, black_jail_pop, latinx_jail_pop,
          native_jail_pop, white_jail_pop)
-
+#this is to build a fuunction that will then take out specific races and explore discrepancies.
 
 # Finding State Total Population for Each Race 
 black_jail_pop_per_state <- relevant_variables %>% group_by(state) %>% 
@@ -148,7 +165,7 @@ jail_pop_per_state <- jail_pop_per_state %>%
       white_jail_pop_per_state
   )
 
-# chart 1: Black vs. White Jail Population in Washington (over time)
+# chart 1: Black vs. White Jail Population Growth in Washington
 
 wa_data <- relevant_variables %>% 
   filter(state == "WA") %>% 
@@ -157,10 +174,10 @@ wa_data <- relevant_variables %>%
 # creating plot
 jail_pop_over_time <- wa_data %>% 
   ggplot() +
-  geom_line(mapping = aes( x = year, y = black_jail_pop), color = "Blue") +
-  geom_line(mapping = aes( x = year, y = white_jail_pop), color = "Red")+
-  labs(title = "Black jail population vs. White jail population over time",
-       subtitle = "Data is only from Washington State \n Red lines are black population \n Blue lines are white population",
+  geom_line(mapping = aes( x = year, y = black_jail_pop), color = "Red") +
+  geom_line(mapping = aes( x = year, y = white_jail_pop), color = "Blue")+
+  labs(title = "Black Jail Population Growth vs. White jail Population Growth",
+       subtitle = "Data is only from Washington State \n Red lines are black population \n Blue lines are black population",
        x = "Year",
        y = "Jail Population")
 jail_pop_over_time
@@ -187,9 +204,9 @@ balck_vs_black_jail_pop_per_state <- jail_pop_per_state %>%
   ggplot()+
   geom_bar(mapping = aes( x = black_jail_approx, fill = "Black")) +
   geom_bar(mapping = aes( x = white_jail_approx, fill = "White", alpha = 0.3)) +
-  labs(title = "Black vs. White Jail Pop. per State",
+  labs(title = "Black vs. White Jail Pop. Growth Per State",
        x = "Jail Population per State in tens of thousands",
-       y = "Count"
+       y = "Percantage Growth"
   )
 balck_vs_black_jail_pop_per_state
 

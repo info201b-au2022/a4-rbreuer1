@@ -11,6 +11,11 @@ source("../source/analysis.r")
 source("../source/a4-helpers.R")
 ```
 
+## Abstract
+
+This report addresses discrepancies across a variety of countries related to jailed populations. There are unjust power structures that exist in our society and data science has the power to reveal these systems. This data impacts populations across a wide range of races, communities, and groups. Communities in which the jailed populations are located and their families are some of the indirect stakeholders of this set. The questions that I answer in my report include how people of different races are represented in the jailed populations of our country. 
+
+
 ## Section 1: Introduction
 
 This report addresses social issues of racial inequality, biases, and discrepancies across the countries related to jailed populations. There are power structures that exist and in order to combat them, we have to use the data and resources we have access to in order to reveal unjust systems. The direct stakeholders of this data set are those in the populations included in this data set. The indirect stakeholders impacted by this data set include the communities in which the jailed populations are located and their families. The questions that I answer in my report include how people of different races are represented in the jailed populations of our country.
@@ -37,14 +42,21 @@ This chart below showcases the varying rise in jail populations across the count
 plot(plot_jail_pop_by_states)
 ```
 
-# Section 5: Black vs. White Jail Population in Washington (over time)
+## Summary (Section 4):
 
-This chart below shows the difference in black and white populations of people in Washington jails. It shows that there are serious differences in these values. The main takeaway is that there are more black people in jail than white people. 
+This data shows us that there are systematic changes in which are increasing the amount of people going to jail. Although the population is rising in the United States, the jailed population is rising at a higher rate. This data tells us that we need to investigate our justice system and understand why this population is rising. 
+
+# Section 5: Black vs. White Jail Population Growth in Washington Overtime
+
+This chart below shows the difference in black and white population growth in Washington jails. It shows that there has been a recent increase in the population of black people vs. white. The main takeaway is that there is a trend for more black people (in ratio to white) over time.
 
 
 ```{r echo=FALSE}
 plot(balck_vs_black_jail_pop_per_state)
 ```
+
+## Summary (Section 5):
+This data shows that there has been an exponential increase in the population growth of black people in Jail in Washington. The alpha is the portion of population growth that is equalized by the two races.
 
 # Section 6: Map Showcasing Percantage of Each State's Black Jail Population
 
